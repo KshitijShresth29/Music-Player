@@ -14,16 +14,18 @@ mongoose.connect(
     useUnifiedTopology: true,
   }
 )
-  .then((x) => {
-    console.log("connected");
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((error) => {
+    console.error("Error connecting to MongoDB:", error);
   });
 
-
-app.get("/",(req,res) => {
-    res.send("Hello World");
+app.get("/", (req, res) => {
+  res.send("Hello World");
 });
 
-app.listen(port,()=>{
-    console.log("app is running on port +" + port);
-
+app.listen(port, () => {
+  console.log("App is running on port " + port);
 });
+
