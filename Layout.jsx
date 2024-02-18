@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { Children } from 'react'
 import PropTypes from 'prop-types'
 
-const Layout = props => {
+const Layout = {(children)} => {
   return (
-    <div>Layout</div>
+    <div>
+        <Sidebar/>
+        {children}</div>
   )
 }
 
